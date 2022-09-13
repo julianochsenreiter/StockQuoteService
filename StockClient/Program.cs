@@ -19,6 +19,7 @@ namespace StockClient
                 CompanyInfo info = client.GetInfo("msft");
                 Console.WriteLine(info);
             }
+            Console.ReadKey();
         }
     }
 }
