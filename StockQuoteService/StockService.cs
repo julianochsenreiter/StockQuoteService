@@ -10,6 +10,23 @@ namespace StockQuoteService
     // HINWEIS: Mit dem Befehl "Umbenennen" im Menü "Umgestalten" können Sie den Klassennamen "StockService" sowohl im Code als auch in der Konfigurationsdatei ändern.
     public class StockService : IStockService
     {
+        public CompanyInfo GetInfo(string symbol)
+        {
+            if (symbol.ToLower() == "msft")
+                return new CompanyInfo
+                {
+                    Name = "Microsoft Corporation",
+                    Address = "One Microsoft Way, 97852 Redmond"
+                };
+            if (symbol.ToLower() == "goog")
+                return new CompanyInfo
+                {
+                    Name = "Alphabet Inc.",
+                    Address = "99 Google Boulevard, 2341 Palo Alto"
+                };
+            return null;
+        }
+
         public decimal GetQuote(string symbol)
         {
             if (symbol.ToLower() == "msft")

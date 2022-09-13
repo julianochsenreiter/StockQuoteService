@@ -16,8 +16,10 @@ namespace StockClient
                 decimal quote = client.GetQuote("msft");
                 Console.WriteLine(quote);
 
-                Console.ReadKey();
+                CompanyInfo info = client.GetInfo("msft");
+                Console.WriteLine(info);
             }
+            Console.ReadKey();
         }
     }
 }

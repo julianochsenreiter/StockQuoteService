@@ -25,6 +25,7 @@
     <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="7545528e-46d1-448c-b5eb-e7f4d0407e71" SourceId="1" SourceUrl="http://localhost/Temporary_Listen_Addresses/quote/mex" />
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="8193cc72-425c-46f9-a33c-8b969d5bc7ee" SourceId="1" SourceUrl="http://localhost/Temporary_Listen_Addresses/quote/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="0dc935ef-7db2-4d37-9771-adca17e8ac66" SourceId="1" SourceUrl="http://localhost/Temporary_Listen_Addresses/quote/mex" />
+    <MetadataFile FileName="StockQuoteService.xsd" MetadataType="Schema" ID="3f329b36-7cce-4397-a3a6-f760726d9cc9" SourceId="1" SourceUrl="http://localhost/Temporary_Listen_Addresses/quote/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

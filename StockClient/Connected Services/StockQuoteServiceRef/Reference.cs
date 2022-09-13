@@ -9,7 +9,70 @@
 //------------------------------------------------------------------------------
 
 namespace StockClient.StockQuoteServiceRef {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CompanyInfo", Namespace="http://schemas.datacontract.org/2004/07/StockQuoteService")]
+    [System.SerializableAttribute()]
+    public partial class CompanyInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Address {
+            get {
+                return this.AddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="StockQuoteServiceRef.IStockService")]
@@ -20,6 +83,12 @@ namespace StockClient.StockQuoteServiceRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStockService/GetQuote", ReplyAction="http://tempuri.org/IStockService/GetQuoteResponse")]
         System.Threading.Tasks.Task<decimal> GetQuoteAsync(string symbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStockService/GetInfo", ReplyAction="http://tempuri.org/IStockService/GetInfoResponse")]
+        StockClient.StockQuoteServiceRef.CompanyInfo GetInfo(string symbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStockService/GetInfo", ReplyAction="http://tempuri.org/IStockService/GetInfoResponse")]
+        System.Threading.Tasks.Task<StockClient.StockQuoteServiceRef.CompanyInfo> GetInfoAsync(string symbol);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +124,14 @@ namespace StockClient.StockQuoteServiceRef {
         
         public System.Threading.Tasks.Task<decimal> GetQuoteAsync(string symbol) {
             return base.Channel.GetQuoteAsync(symbol);
+        }
+        
+        public StockClient.StockQuoteServiceRef.CompanyInfo GetInfo(string symbol) {
+            return base.Channel.GetInfo(symbol);
+        }
+        
+        public System.Threading.Tasks.Task<StockClient.StockQuoteServiceRef.CompanyInfo> GetInfoAsync(string symbol) {
+            return base.Channel.GetInfoAsync(symbol);
         }
     }
 }

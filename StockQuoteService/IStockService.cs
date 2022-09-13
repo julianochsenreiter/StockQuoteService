@@ -13,5 +13,8 @@ namespace StockQuoteService
     {
         [OperationContract]
         decimal GetQuote(string symbol);
+
+        [OperationContract]
+        CompanyInfo GetInfo(string symbol);
     }
 }
